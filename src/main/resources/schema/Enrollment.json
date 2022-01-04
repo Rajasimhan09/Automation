@@ -1,0 +1,688 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "default": "website",
+      "examples": [
+        "website"
+      ]
+    },
+    "memberProfile": {
+      "type": "object",
+      "properties": {
+        "prefix": {
+          "type": "string",
+          "default": "MR",
+          "examples": [
+            "MR"
+          ]
+        },
+        "isActive": {
+          "type": "boolean",
+          "default": true,
+          "examples": [
+            true,
+            false
+          ]
+        },
+        "firstName": {
+          "type": "string",
+          "default": "{{$randomFirstName}}",
+          "examples": [
+            "{{$randomFirstName}}"
+          ]
+        },
+        "lastName": {
+          "type": "string",
+          "default": "{{$randomLastName}}",
+          "examples": [
+            "{{$randomLastName}}"
+          ]
+        },
+        "dob": {
+          "type": "string",
+          "default": "1994-10-20",
+          "examples": [
+            "1994-10-20"
+          ],
+          "format": "date"
+        },
+        "gender": {
+          "type": "string",
+          "default": "m",
+          "examples": [
+            "m"
+          ]
+        },
+        "officialACLanguageCode": {
+          "type": "string",
+          "default": "en",
+          "examples": [
+            "en"
+          ]
+        },
+        "email": {
+          "type": "string",
+          "default": "{{$randomFirstName}}@gmail.com",
+          "examples": [
+            "{{$randomFirstName}}@gmail.com"
+          ],
+          "format": "email"
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "default": "home",
+                "examples": [
+                  "home"
+                ]
+              },
+              "country": {
+                "type": "string",
+                "default": "CA",
+                "examples": [
+                  "CA"
+                ]
+              },
+              "state": {
+                "type": "string",
+                "default": "ON",
+                "examples": [
+                  "ON"
+                ]
+              },
+              "city": {
+                "type": "string",
+                "default": "Smithville",
+                "examples": [
+                  "Smithville"
+                ]
+              },
+              "zip": {
+                "type": "string",
+                "default": "M2U 0B3",
+                "examples": [
+                  "M2U 0B3"
+                ]
+              },
+              "addressLine1": {
+                "type": "string",
+                "default": "1234-A Smithstreet",
+                "examples": [
+                  "1234-A Smithstreet"
+                ]
+              },
+              "addressLine2": {
+                "type": "string",
+                "default": "APT 22 TECH HOME",
+                "examples": [
+                  "APT 22 TECH HOME"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "country",
+              "state",
+              "city",
+              "zip",
+              "addressLine1",
+              "addressLine2"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "phones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "default": "mobile",
+                "examples": [
+                  "mobile"
+                ]
+              },
+              "countryCode": {
+                "type": "string",
+                "default": "01",
+                "examples": [
+                  "01"
+                ]
+              },
+              "number": {
+                "type": "string",
+                "default": "5141234567",
+                "examples": [
+                  "5141234567"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "countryCode",
+              "number"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "isConsentGranted": {
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            true,
+            false
+          ]
+        },
+        "seatPref": {
+          "type": "string",
+          "default": "Aisle",
+          "examples": [
+            "Aisle"
+          ]
+        },
+        "mealPref": {
+          "type": "string",
+          "default": "AVML",
+          "examples": [
+            "AVML"
+          ]
+        },
+        "specialNeeds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "default": "BLND",
+            "examples": [
+              "BLND"
+            ]
+          }
+        },
+        "ktn": {
+          "type": "string",
+          "default": "463453",
+          "examples": [
+            "463453"
+          ]
+        },
+        "redressNumber": {
+          "type": "string",
+          "default": "238479",
+          "examples": [
+            "238479"
+          ]
+        },
+        "additionalEmail": {
+          "type": "string",
+          "default": "testing@ac.com",
+          "examples": [
+            "testing@ac.com"
+          ],
+          "format": "email"
+        },
+        "FQTV": {
+          "type": "object",
+          "properties": {
+            "number": {
+              "type": "string",
+              "default": "1231454",
+              "examples": [
+                "1231454"
+              ]
+            },
+            "program": {
+              "type": "string",
+              "default": "KILO",
+              "examples": [
+                "KILO"
+              ]
+            }
+          },
+          "required": [
+            "number",
+            "program"
+          ],
+          "additionalProperties": false
+        },
+        "nationality": {
+          "type": "string",
+          "default": "CAN",
+          "examples": [
+            "CAN"
+          ]
+        },
+        "additionalPassenger": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lastName": {
+                "type": "string",
+                "default": "Jackie",
+                "examples": [
+                  "Jackie"
+                ]
+              },
+              "firstName": {
+                "type": "string",
+                "default": "Miller",
+                "examples": [
+                  "Miller"
+                ]
+              },
+              "passengerType": {
+                "type": "string",
+                "default": "PT",
+                "examples": [
+                  "PT"
+                ]
+              },
+              "seatPref": {
+                "type": "string",
+                "default": "SP",
+                "examples": [
+                  "SP"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "default": "m",
+                "examples": [
+                  "m"
+                ]
+              },
+              "mealPref": {
+                "type": "string",
+                "default": "MP",
+                "examples": [
+                  "MP"
+                ]
+              },
+              "prefix": {
+                "type": "string",
+                "default": "MR",
+                "examples": [
+                  "MR"
+                ]
+              },
+              "id": {
+                "type": "string",
+                "default": "1",
+                "examples": [
+                  "1"
+                ]
+              },
+              "nationality": {
+                "type": "string",
+                "default": "CAN",
+                "examples": [
+                  "CAN"
+                ]
+              },
+              "email": {
+                "type": "string",
+                "default": "helloWorld@ac.com",
+                "examples": [
+                  "helloWorld@ac.com"
+                ],
+                "format": "email"
+              },
+              "mobile": {
+                "type": "string",
+                "default": "2348728934",
+                "examples": [
+                  "2348728934"
+                ]
+              },
+              "countryCode": {
+                "type": "integer",
+                "default": 1,
+                "examples": [
+                  1
+                ]
+              },
+              "specialNeeds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "default": "BLND",
+                  "examples": [
+                    "BLND"
+                  ]
+                }
+              },
+              "ktn": {
+                "type": "string",
+                "default": "213",
+                "examples": [
+                  "213"
+                ]
+              },
+              "redressNumber": {
+                "type": "string",
+                "default": "124352",
+                "examples": [
+                  "124352"
+                ]
+              },
+              "fqtv": {
+                "type": "string",
+                "default": "23432",
+                "examples": [
+                  "23432"
+                ]
+              },
+              "fqtvProgram": {
+                "type": "string",
+                "default": "Tester",
+                "examples": [
+                  "Tester"
+                ]
+              }
+            },
+            "required": [
+              "lastName",
+              "firstName",
+              "passengerType",
+              "seatPref",
+              "gender",
+              "mealPref",
+              "prefix",
+              "id",
+              "nationality",
+              "email",
+              "mobile",
+              "countryCode",
+              "specialNeeds",
+              "ktn",
+              "redressNumber",
+              "fqtv",
+              "fqtvProgram"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "pinDetails": {
+          "type": "object",
+          "properties": {
+            "isPinLocked": {
+              "type": "boolean",
+              "default": false,
+              "examples": [
+                true,
+                false
+              ]
+            },
+            "pin": {
+              "type": "string",
+              "default": "3421",
+              "examples": [
+                "3421"
+              ]
+            }
+          },
+          "required": [
+            "isPinLocked",
+            "pin"
+          ],
+          "additionalProperties": false
+        },
+        "loyaltyProfile": {
+          "type": "object",
+          "properties": {
+            "hasLinkedCards": {
+              "type": "boolean",
+              "default": false,
+              "examples": [
+                true,
+                false
+              ]
+            },
+            "isLegacyMillionMiler": {
+              "type": "boolean",
+              "default": false,
+              "examples": [
+                true,
+                false
+              ]
+            },
+            "isMillionMiler": {
+              "type": "boolean",
+              "default": false,
+              "examples": [
+                true,
+                false
+              ]
+            },
+            "millionMilerLevel": {
+              "type": "string",
+              "default": "0",
+              "examples": [
+                "0"
+              ]
+            },
+            "isGhostCardProfile": {
+              "type": "boolean",
+              "default": false,
+              "examples": [
+                true,
+                false
+              ]
+            },
+            "isAccrualValid": {
+              "type": "string",
+              "default": "NA",
+              "examples": [
+                "NA"
+              ]
+            },
+            "isRedemptionValid": {
+              "type": "string",
+              "default": "NA",
+              "examples": [
+                "NA"
+              ]
+            },
+            "isPoolMember": {
+              "type": "boolean",
+              "default": false,
+              "examples": [
+                true,
+                false
+              ]
+            },
+            "lastActivityDate": {
+              "type": "string",
+              "default": "2020-01-01",
+              "examples": [
+                "2020-01-01"
+              ],
+              "format": "date"
+            },
+            "memberAccount": {
+              "type": "object",
+              "properties": {
+                "companyCode": {
+                  "type": "string",
+                  "default": "AC",
+                  "examples": [
+                    "AC"
+                  ]
+                },
+                "programCode": {
+                  "type": "string",
+                  "default": "ACRP",
+                  "examples": [
+                    "ACRP"
+                  ]
+                },
+                "customerNumber": {
+                  "type": "string",
+                  "default": "25200",
+                  "examples": [
+                    "25200"
+                  ]
+                },
+                "accountStatus": {
+                  "type": "string",
+                  "default": "A",
+                  "examples": [
+                    "A"
+                  ]
+                },
+                "enrolmentSource": {
+                  "type": "string",
+                  "default": "C",
+                  "examples": [
+                    "C"
+                  ]
+                },
+                "enrolmentSourceCode": {
+                  "type": "null"
+                },
+                "enrolmentDate": {
+                  "type": "string",
+                  "default": "2020-03-20",
+                  "examples": [
+                    "2020-03-20"
+                  ],
+                  "format": "date"
+                },
+                "periodType": {
+                  "type": "string",
+                  "default": "O",
+                  "examples": [
+                    "O"
+                  ]
+                },
+                "period": {
+                  "type": "string",
+                  "default": "0",
+                  "examples": [
+                    "0"
+                  ]
+                },
+                "extendToDay": {
+                  "type": "string",
+                  "default": "0",
+                  "examples": [
+                    "0"
+                  ]
+                },
+                "extendToMonth": {
+                  "type": "string",
+                  "default": "0",
+                  "examples": [
+                    "0"
+                  ]
+                },
+                "tier": {
+                  "type": "string",
+                  "default": "BASE",
+                  "examples": [
+                    "BASE"
+                  ]
+                },
+                "tierFromDate": {
+                  "type": "string",
+                  "default": "2020-01-01",
+                  "examples": [
+                    "2020-01-01"
+                  ],
+                  "format": "date"
+                },
+                "membershipType": {
+                  "type": "string",
+                  "default": "I",
+                  "examples": [
+                    "I"
+                  ]
+                },
+                "membershipStatus": {
+                  "type": "string",
+                  "default": "A",
+                  "examples": [
+                    "A"
+                  ]
+                }
+              },
+              "required": [
+                "companyCode",
+                "programCode",
+                "customerNumber",
+                "accountStatus",
+                "enrolmentSource",
+                "enrolmentSourceCode",
+                "enrolmentDate",
+                "periodType",
+                "period",
+                "extendToDay",
+                "extendToMonth",
+                "tier",
+                "tierFromDate",
+                "membershipType",
+                "membershipStatus"
+              ],
+              "additionalProperties": false
+            },
+            "frozenFlags": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "hasLinkedCards",
+            "isLegacyMillionMiler",
+            "isMillionMiler",
+            "millionMilerLevel",
+            "isGhostCardProfile",
+            "isAccrualValid",
+            "isRedemptionValid",
+            "isPoolMember",
+            "lastActivityDate",
+            "memberAccount",
+            "frozenFlags"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "prefix",
+        "isActive",
+        "firstName",
+        "lastName",
+        "dob",
+        "gender",
+        "officialACLanguageCode",
+        "email",
+        "address",
+        "phones",
+        "isConsentGranted",
+        "seatPref",
+        "mealPref",
+        "specialNeeds",
+        "ktn",
+        "redressNumber",
+        "additionalEmail",
+        "FQTV",
+        "nationality",
+        "additionalPassenger",
+        "pinDetails",
+        "loyaltyProfile"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "source",
+    "memberProfile"
+  ],
+  "additionalProperties": false
+}
